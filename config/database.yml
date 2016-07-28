@@ -22,4 +22,4 @@ test:
 
 production:
   <<: *default
-  database: db/production.postgresql
+  database: url_shortener_v2_production
