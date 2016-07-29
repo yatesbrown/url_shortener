@@ -5,12 +5,13 @@ class UrlsController < ApplicationController
   # GET /urls.json
   def index
     @urls = Url.all
+    @url = Url.new
   end
 
   # GET /urls/1
   # GET /urls/1.json
   def show
-    redirect_to @url.url 
+    redirect_to @url.url
   end
 
   # GET /urls/new
@@ -29,7 +30,7 @@ class UrlsController < ApplicationController
 
     respond_to do |format|
       if @url.save
-        format.html { redirect_to @url, notice: 'Url was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Url was successfully created.' }
         format.json { render :show, status: :created, location: @url }
       else
         format.html { render :new }
